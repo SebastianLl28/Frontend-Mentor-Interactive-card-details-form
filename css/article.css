@@ -1,0 +1,137 @@
+.article {
+  grid-area: asection;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 735px) {
+  .article {
+    margin: 10rem 0;
+    align-items: center;
+  }
+}
+
+.form {
+  width: 40%;
+  transform: translateX(20%);
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: repeat(4, 25%);
+  grid-template-areas: "uno    uno" "dos    dos" "tres   cuatro" "button button";
+  gap: 0.9rem;
+}
+@media screen and (max-width: 735px) {
+  .form {
+    width: 60%;
+    transform: translateX(0);
+  }
+}
+.form--display {
+  display: none;
+}
+.form__button {
+  width: 100%;
+  height: 3rem;
+  border-radius: 10px;
+  border: none;
+  background-color: hsl(278deg, 68%, 11%);
+  color: hsl(0deg, 0%, 100%);
+  font-size: 1.2rem;
+  font-family: "Space Grotesk", sans-serif;
+  cursor: pointer;
+  grid-area: button;
+}
+.form__button:hover {
+  background-color: hsl(278deg, 48%, 23%);
+}
+.form__input {
+  border: 1px solid hsl(279deg, 6%, 55%);
+  border-radius: 8px;
+  height: 2.8rem;
+  outline: none;
+  padding: 0 0.5rem;
+  font-size: 1rem;
+  color: hsl(278deg, 68%, 11%);
+  font-family: "Space Grotesk", sans-serif;
+}
+.form__input__error {
+  border: 1px solid hsl(0deg, 100%, 66%);
+}
+.form__input::placeholder {
+  color: hsl(279deg, 6%, 55%);
+}
+.form__input--border {
+  border: 1px solid hsl(0deg, 100%, 66%);
+}
+.form__container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.form__container:nth-child(3) {
+  display: grid;
+  grid-template-columns: 45% 45%;
+  grid-template-areas: "a a" "b c" "e e";
+}
+.form__container:nth-child(3) .form__label {
+  grid-area: a;
+}
+.form__container:nth-child(3) .form__input:nth-child(1) {
+  grid-area: c;
+}
+.form__container:nth-child(3) .form__input:nth-child(2) {
+  grid-area: b;
+}
+.form__container:nth-child(3) .form__error {
+  grid-area: e;
+}
+.form__container:nth-child(1) {
+  grid-area: uno;
+}
+.form__container:nth-child(2) {
+  grid-area: dos;
+}
+.form__container:nth-child(3) {
+  grid-area: tres;
+}
+.form__container:nth-child(4) {
+  grid-area: cuatro;
+}
+.form__label {
+  color: hsl(278deg, 68%, 11%);
+  font-size: 0.8rem;
+}
+.form__date {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.5rem;
+}
+.form__date input {
+  width: 50%;
+}
+.form__error {
+  color: hsl(0deg, 100%, 66%);
+  font-size: 0.8rem;
+}
+.form__error--visibility {
+  visibility: hidden;
+}
+@media screen and (max-width: 858px) {
+  .form {
+    grid-template-columns: 55% 45%;
+  }
+  .form__label {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (max-width: 751px) {
+  .form__error {
+    font-size: 0.7rem;
+  }
+  .form__input {
+    font-size: 0.9rem;
+  }
+}
+
+/*# sourceMappingURL=article.css.map */

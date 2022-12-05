@@ -1,0 +1,150 @@
+.header {
+  height: 100%;
+  grid-area: aheader;
+  background-image: url("../images/bg-main-desktop.png");
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 735px) {
+  .header {
+    align-items: start;
+    justify-content: center;
+  }
+}
+
+.header__container {
+  height: 70%;
+  width: 110%;
+  position: absolute;
+  transform: translateX(35%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media screen and (max-width: 1045px) {
+  .header__container {
+    transform: translateX(20%);
+    width: 125%;
+    height: 65%;
+  }
+}
+@media screen and (max-width: 950px) {
+  .header__container {
+    transform: translateX(15%);
+    width: 160%;
+  }
+}
+@media screen and (max-width: 965px) {
+  .header__container {
+    transform: translateX(10%);
+    width: 150%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .header__container {
+    width: 140%;
+  }
+}
+@media screen and (max-width: 735px) {
+  .header__container {
+    width: 30rem;
+    height: 110%;
+    transform: translateY(10%);
+  }
+}
+@media screen and (max-width: 535px) {
+  .header__container {
+    width: 90%;
+  }
+}
+
+.cardFront {
+  width: 75%;
+  height: 45%;
+  background-image: url("../images/bg-card-front.png");
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+  border-radius: 9px;
+  color: hsl(0deg, 0%, 100%);
+  display: grid;
+  grid-template-rows: 0.7fr 1fr;
+  padding: 1rem;
+}
+@media screen and (max-width: 735px) {
+  .cardFront {
+    height: 65%;
+    position: absolute;
+  }
+}
+.cardFront__info {
+  align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+.cardFront__number {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+}
+@media screen and (max-width: 1226px) {
+  .cardFront__number {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 1105px) {
+  .cardFront__number {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (max-width: 984px) {
+  .cardFront__number {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 735px) {
+  .cardFront {
+    bottom: 0;
+    z-index: 1;
+  }
+  .cardFront__number {
+    font-size: 1.5rem;
+  }
+}
+
+.cardBack {
+  width: 75%;
+  height: 45%;
+  background-image: url("../images/bg-card-back.png");
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+  border-radius: 9px;
+  align-self: flex-end;
+  display: flex;
+  justify-content: end;
+  padding: 0 1rem;
+}
+@media screen and (max-width: 735px) {
+  .cardBack {
+    height: 65%;
+    position: absolute;
+  }
+}
+.cardBack__cvc {
+  transform: translateY(15%);
+  color: hsl(0deg, 0%, 100%);
+}
+
+/*# sourceMappingURL=header.css.map */

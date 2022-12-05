@@ -1,0 +1,128 @@
+@use 'mixins-function';
+@use 'colors';
+.header{
+    height: 100%;
+    grid-area: aheader;
+    @include mixins-function.image('../images/bg-main-desktop.png');
+    position: relative;
+    display: flex;
+    align-items: center;
+    @include mixins-function.mediaTable{
+        &{
+            align-items: start;
+            justify-content: center;
+        }
+    }
+}
+
+.header__container{
+    height: 70%;
+    width: 110%;
+    position: absolute;
+    transform: translateX(35%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include mixins-function.mediaQ(1045px){
+        &{
+            transform: translateX(20%);
+            width: 125%;
+            height: 65%;
+        }
+    }
+    @include mixins-function.mediaQ(950px){
+        &{
+            transform: translateX(15%);
+            width: 160%;
+        }
+    }
+
+    @include mixins-function.mediaQ(965px){
+        &{
+            transform: translateX(10%);
+            width: 150%;
+        }
+    }
+    @include mixins-function.mediaQ(800px){
+        &{
+            width: 140%;
+        }
+    }
+    @include mixins-function.mediaTable{
+        &{
+            width: 30rem;
+            height: 110%;
+            transform: translateY(10%);
+        }
+    }
+    @include mixins-function.mediaPhone(){
+        &{
+            width: 90%;
+        }
+    }
+}
+
+.cardFront{
+    @include mixins-function.image-card('../images/bg-card-front.png');
+    color: colors.$white;
+    display: grid;
+    grid-template-rows: .7fr 1fr; 
+    padding: 1rem;
+    &__info{
+        align-self: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        font-size: .7rem;
+        text-transform: uppercase;
+        letter-spacing: .1rem;
+    }
+    
+    &__number{
+        width: 100%;
+        text-align: center;
+        font-size: 1.5rem;
+        letter-spacing: .2rem;
+    }
+
+    @include mixins-function.mediaQ(1226px){
+        &__number{
+            font-size: 1.3rem;
+        }
+    }
+
+    @include mixins-function.mediaQ(1105px){
+        &__number{
+            font-size: 1.1rem;
+        }
+    }
+
+    @include mixins-function.mediaQ(984px){
+        &__number{
+            font-size: 1rem;
+        }
+    }
+
+    @include mixins-function.mediaTable{
+        bottom: 0;
+        z-index: 1;
+        &__number{
+            font-size: 1.5rem
+        }
+    }
+    
+}
+
+.cardBack{
+    @include mixins-function.image-card('../images/bg-card-back.png');
+    align-self: flex-end;
+    display: flex;
+    justify-content: end;
+    padding: 0 1rem;
+    &__cvc{
+        transform: translateY(15%);
+        color: colors.$white;
+    }
+}

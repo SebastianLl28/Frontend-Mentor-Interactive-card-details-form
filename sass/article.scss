@@ -1,0 +1,134 @@
+@use 'colors';
+@use 'mixins-function';
+
+.article{
+    grid-area: asection;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    @include mixins-function.mediaTable{
+        &{
+            margin: 10rem 0; 
+            align-items: center;
+        }
+    }
+}
+
+.form{
+    @include mixins-function.container;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(4, 25%);
+    grid-template-areas: 
+    'uno    uno'
+    'dos    dos'
+    'tres   cuatro'
+    'button button';
+    gap: .9rem;
+    &--display{
+        display: none
+    }
+    &__button{
+        @include mixins-function.button;
+        grid-area: button;
+    }
+    &__input{
+        border: 1px solid colors.$dark-grayish-violet;
+        border-radius: 8px;
+        height: 2.8rem;
+        outline: none;
+        padding: 0 .5rem;
+        font-size: 1rem;
+        color: colors.$very-dark-violet;
+        font-family: 'Space Grotesk', sans-serif;
+        &__error{
+            border: 1px solid colors.$red;
+        }
+        &::placeholder{
+            color: colors.$dark-grayish-violet;
+        }
+        &--border{
+            border: 1px solid colors.$red;
+        }
+    }
+    &__container{
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        &:nth-child(3){
+            display: grid;
+            grid-template-columns: 45% 45%;
+            grid-template-areas: 
+            'a a'
+            'b c'
+            'e e';
+            & .form__label{
+                grid-area: a;
+            }
+            & .form__input:nth-child(1){
+                grid-area: c;
+            }
+            & .form__input:nth-child(2){
+                grid-area: b;
+            }
+            & .form__error{
+                grid-area: e;
+            }
+        }
+        &:nth-child(1){
+            grid-area: uno;
+        }
+        &:nth-child(2){
+            grid-area: dos;
+        }
+        &:nth-child(3){
+            grid-area: tres;
+        }
+        &:nth-child(4){
+            grid-area: cuatro;
+        }
+    }
+    &__label{
+        color: colors.$very-dark-violet;
+        font-size: .8rem;
+    }
+    &__date{
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: .4rem .5rem;
+        & input{
+            width: 50%;
+        }
+    }
+    &__error{
+        color: colors.$red;
+        font-size: .8rem;
+        &--visibility{
+            visibility: hidden;
+        }
+    }
+    
+    @include mixins-function.mediaQ(858px){
+        &{
+            grid-template-columns: 55% 45%;
+        }
+        &__label{
+            font-size: .7rem;
+        }
+    }
+    @include mixins-function.mediaQ(751px){
+        &__error{
+            font-size: .7rem;
+        }
+        &__input{
+            font-size: .9rem;
+        }
+    }
+
+    @include mixins-function.mediaTable{
+        
+    }
+    
+}
